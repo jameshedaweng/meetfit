@@ -1,0 +1,13 @@
+@mixin transition-normal(){
+  -webkit-transition: .4s linear;
+  -moz-transition: .4s linear;
+  -o-transition: .4s linear;
+  transition: .4s linear;
+}
+
+@mixin transition-quick(){
+  -webkit-transition: .1s linear;
+  -moz-transition: .1s linear;
+  -o-transition: .1s linear;
+  transition: .1s linear;
+}
