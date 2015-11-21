@@ -1,0 +1,38 @@
+[
+    {
+        "text": "Futbol Sala",
+        "status": 1,
+        "user_id": 1,
+        "tag": null,
+        "date": "21/11/2015 12:00:00",
+        "location": [
+            "43.476921",
+            "-3.790124"
+        ],
+        "image": [
+            "jpg",
+            "http://www.logronodeporte.es/web/images/Futbolsala.jpg"
+        ],
+        "costs": 0,
+        "accecibility_tag": null,
+        "number_people_needed": 10
+    },
+    {
+        "text": "Tenis",
+        "status": 1,
+        "user_id": 1,
+        "tag": null,
+        "date": "21/11/2015 11:00:00",
+        "location": [
+            "43.476921",
+            "-3.790124"
+        ],
+        "image": [
+            "jpg",
+            "http://www.houndslakecc.com/ordereze/Files/shutterstock_50770603.jpg"
+        ],
+        "costs": 10,
+        "accecibility_tag": null,
+        "number_people_needed": 4
+    }
+]
