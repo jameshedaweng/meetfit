@@ -190,12 +190,21 @@ html, body{
                 .text:after{
                   content: "Unread"
                 }
+                &.favorite{
+                  background-color: $actionYellow;
+                  .text:after{
+                    content: "Favorite"
+                  }
+                }
               }
               &.delete{
                 border-radius: 0px 5px 5px 0px;
                 float: right;
                 background-color: $actionRed;
                 padding: 15px 15px 15px 35px;
+                &.archive{
+                  background-color: $actionDarkBlue;
+                }
               }
             }
           }
@@ -238,12 +247,47 @@ html, body{
                 .text:after{
                   content: "Read"
                 }
+                &.favorite{
+                  .text:after{
+                    content: "Unfavorite"
+                  }
+                }
               }
             }
             .notification-body{
               border-color: $branding;
               color: $branding;
               font-weight: 500;
+            }
+            &.theme-yellow{
+              .notification-body{
+                border-color: $themeYellow;
+                color: $themeYellow;
+              }
+            }
+            &.theme-green{
+              .notification-body{
+                border-color: $themeGreen;
+                color: $themeGreen;
+              }
+            }
+            &.theme-blue{
+              .notification-body{
+                border-color: $themeBlue;
+                color: $themeBlue;
+              }
+            }
+            &.theme-purple{
+              .notification-body{
+                border-color: $themePurple;
+                color: $themePurple;
+              }
+            }
+            &.theme-orange{
+              .notification-body{
+                border-color: $themeOrange;
+                color: $themeOrange;
+              }
             }
           }
         }
