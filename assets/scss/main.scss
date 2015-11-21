@@ -153,17 +153,72 @@ html, body{
         max-width: 768px;
         margin: 0 auto;
         .notification-item{
-          width: 100%;
-          border: 1px solid $lineGray;
-          border-radius: 5px;
-          background-color: $bgWhite;
-          padding: 15px;
           margin-bottom: 15px;
+          position: relative;
+          height: 100px;
+          .notification-actions{
+            position: absolute;
+            width: 568px;
+            top: 0; 
+            left: 100px;
+            z-index: 10;
+            .swipe-action{
+              width: 120px;
+              height: 100px;
+              display: inline-block;
+              text-align: center;
+              color: $textWhite;
+              i{
+                font-size: 30px;
+                line-height: 50px;
+              }
+              .text{
+                line-height: 20px;
+              }
+              &.read{
+                border-radius: 5px 0px 0px 5px;
+                float: left;
+                background-color: $actionBlue;
+                padding: 15px 35px 15px 15px;
+                .text:after{
+                  content: "Unread"
+                }
+              }
+              &.delete{
+                border-radius: 0px 5px 5px 0px;
+                float: right;
+                background-color: $actionRed;
+                padding: 15px 15px 15px 35px;
+              }
+            }
+          }
+          .notification-body{
+            position: absolute;
+            width: 568px;
+            top: 0;
+            left: 100px;
+            height: 100px;
+            border: 1px solid $lineGray;
+            border-radius: 5px;
+            background-color: $bgWhite;
+            padding: 15px;
+            z-index: 100;
+            @include transition-quick();
+          }
           &.notification-unread{
-            border-color: $branding;
-            border-width: 2px;
-            color: $branding;
-            font-weight: 500;
+            .notification-actions{
+              .read{
+                .text:after{
+                  content: "Read"
+                }
+              }
+            }
+            .notification-body{
+              border-color: $branding;
+              border-width: 2px;
+              color: $branding;
+              font-weight: 500;
+            }
           }
         }
       }
@@ -191,7 +246,7 @@ html, body{
     &.large-pane{
       width: 100%;
       .pane-inner{
-        padding: 44px 15px 15px 15px;
+        padding: 44px 15px 49px 15px;
         .group{
           border: 1px solid $lineGray;
           border-radius: 5px;

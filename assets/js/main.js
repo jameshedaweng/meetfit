@@ -88,9 +88,32 @@ MF.pillSwitch = function(){
 };
 
 MF.readNotification = function(){
-  $(".main-container").on("click", ".notification-item", function(){
-    $(this).toggleClass("notification-unread");
+  $(".main-container").on("click", ".read", function(){
+    $(this).parent().parent().toggleClass("notification-unread");
     MF.pillInit();
+  });
+};
+
+MF.swipeNotification = function(){
+  $(".main-container").on("swipeleft", ".notification-body", function(){
+    if(!$(this).hasClass("right-expanded")){
+      $(this).css("left", "0px");
+      $(this).addClass("left-expanded");
+    }
+    else{
+      $(this).css("left", "100px");
+      $(this).removeClass("right-expanded");
+    }
+  });
+  $(".main-container").on("swiperight", ".notification-body", function(){
+    if(!$(this).hasClass("left-expanded")){
+      $(this).css("left", "200px");
+      $(this).addClass("right-expanded");
+    }
+    else{
+      $(this).css("left", "100px");
+      $(this).removeClass("left-expanded");
+    }
   });
 };
 
@@ -107,4 +130,5 @@ $(document).ready(function(){
   MF.menuSwitch();
   MF.pillSwitch();
   MF.readNotification();
+  MF.swipeNotification();
 });
