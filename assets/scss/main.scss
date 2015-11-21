@@ -77,6 +77,15 @@ html, body{
         background-color: $bgWhite;
         border-top: 1px solid $lineGray;
         border-bottom: 1px solid $lineGray;
+        .group-title{
+          height: 30px;
+          line-height: 30px;
+          background-color: $bgLightGray;
+          color: $textMiddleGray;
+          padding: 0px 15px;
+          text-align: left;
+          border-bottom: 1px solid $lineGray;
+        }
         .item{
           padding-left: 15px; 
           height: 45px;
@@ -156,6 +165,7 @@ html, body{
         .group{
           border: 1px solid $lineGray;
           border-radius: 5px;
+          overflow: hidden;
         }
       }
     }
