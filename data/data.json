@@ -1,75 +1,78 @@
 {
-    "events": [
-        {
-            "type": 2,
-            "desciption": "Matchbeetweenfriends",
-            "status": 1,
-            "user_id": 1,
-            "tag": null,
-            "date": "21/11/201512: 00: 00",
-            "location": [
-				"-3.790124",
-                "43.476921",
-                "Santander"
-            ],
-            "image": [
-                "jpg",
-                "http: //www.logronodeporte.es/web/images/Futbolsala.jpg"
-            ],
-            "costs": 0,
-            "accecibility_tag": null,
-            "number_people_needed": 10,
-            "number_people_in_event": 2
-        },
-        {
-            "type": 1,
-            "desciption": "Matchbeetweenfriends",
-            "status": 1,
-            "user_id": 1,
-            "tag": null,
-            "date": "21/11/201511: 00: 00",
-            "location": [
-				"-3.790124",
-                "43.476921",
-                 "Santander"
-            ],
-            "image": [
-                "jpg",
-                "http: //www.houndslakecc.com/ordereze/Files/shutterstock_50770603.jpg"
-            ],
-            "costs": 10,
-            "accecibility_tag": null,
-            "number_people_needed": 4,
-            "number_people_in_event": 1
-        }
-    ],
-    "sports": [
-        {
-            "id": 1,
-            "name": "Futbolsala"
-        },
-        {
-            "id": 2,
-            "name": "Tenis"
-        },
-        {
-            "id": 3,
-            "name": "Padel"
-        }
-    ],
-    "users": [
-        {
-            "id": 1,
-            "name": "HedaWong",
-            "gender": "male",
-            "age": "23",
-            "role": "normal",
-            "email": "hedawong@hacktoprogress.com",
-            "location": [
-                "-3.790124",
-				"43.476921",
-                "Santander"
-            ]
-        }
-    ]
+  "events": [
+    {
+      "type": 2,
+      "desciption": "Matchbeetweenfriends",
+      "status": 1,
+      "user_id": 1,
+      "tag": null,
+      "date": "21/11/201512: 00: 00",
+      "location": [
+        "43.476921",
+        "-3.790124",
+        "Santander"
+      ],
+      "image": [
+        "jpg",
+        "http://www.logronodeporte.es/web/images/Futbolsala.jpg"
+      ],
+      "costs": 0,
+      "accecibility_tag": null,
+      "number_people_needed": 10,
+      "number_people_in_event": 2
+    },
+    {
+      "type": 1,
+      "desciption": "Matchbeetweenfriends",
+      "status": 1,
+      "user_id": 1,
+      "tag": null,
+      "date": "21/11/201511: 00: 00",
+      "location": [
+        "43.476921",
+        "-3.790124",
+        "Santander"
+      ],
+      "image": [
+        "jpg",
+        "http://www.houndslakecc.com/ordereze/Files/shutterstock_50770603.jpg"
+      ],
+      "costs": 10,
+      "accecibility_tag": null,
+      "number_people_needed": 4,
+      "number_people_in_event": 1
+    }
+  ],
+  "sports": [
+    {
+      "id": 1,
+      "name": "Football",
+      "icon": "bi_sport-football"
+    },
+    {
+      "id": 2,
+      "name": "Tennis",
+      "icon": "bi_sport-baseball"
+    },
+    {
+      "id": 3,
+      "name": "Basketball",
+      "icon": "bi_sport-basketball-a"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "HedaWeng",
+      "gender": "male",
+      "age": "23",
+      "role": "normal",
+      "email": "hedaweng@hacktoprogress.com",
+      "location": [
+        "43.476921",
+        "-3.790124",
+        "Santander"
+      ]
+    }
+  ]
 }
