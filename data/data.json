@@ -1,6 +1,7 @@
 [
     {
-        "text": "Futbol Sala",
+        "name": "Futbol Sala",
+		"desciption" : "Match beetween friends", 
         "status": 1,
         "user_id": 1,
         "tag": null,
@@ -18,7 +19,8 @@
         "number_people_needed": 10
     },
     {
-        "text": "Tenis",
+        "name": "Tenis",
+		"desciption" : "Match beetween friends", 
         "status": 1,
         "user_id": 1,
         "tag": null,
