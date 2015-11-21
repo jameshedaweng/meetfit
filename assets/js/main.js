@@ -75,6 +75,10 @@ MF.pillInit = function(){
   if($(".pill-switch").length){
     $("." + $(this).parent().data("bind")).hide();
     $("." + $(".pill-switch > .selected").data("bind")).show();
+    $(".notification-body").css("left", "100px");
+    $(".notification-body").removeClass("left-expanded");
+    $(".notification-body").removeClass("right-expanded");
+    $("#unread-count").text($(".notification-unread").length);
   }
 };
 
@@ -91,6 +95,15 @@ MF.readNotification = function(){
   $(".main-container").on("click", ".read", function(){
     $(this).parent().parent().toggleClass("notification-unread");
     MF.pillInit();
+  });
+};
+
+MF.deleteNotification = function(){
+  $(".main-container").on("click", ".delete", function(){
+    $(this).parent().parent().fadeOut(400, function() { 
+      $(this).remove();
+      MF.pillInit();
+    });
   });
 };
 
@@ -130,5 +143,6 @@ $(document).ready(function(){
   MF.menuSwitch();
   MF.pillSwitch();
   MF.readNotification();
+  MF.deleteNotification();
   MF.swipeNotification();
 });

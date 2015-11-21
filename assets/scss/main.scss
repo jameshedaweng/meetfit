@@ -198,12 +198,32 @@ html, body{
             top: 0;
             left: 100px;
             height: 100px;
-            border: 1px solid $lineGray;
+            border: 2px solid $textMiddleGray;
+            color: $textMiddleGray;
             border-radius: 5px;
             background-color: $bgWhite;
             padding: 15px;
-            z-index: 100;
+            z-index: 15;
             @include transition-quick();
+            line-height: 0px;
+            .icon{
+              width: 15%;
+              height: 70px;
+              line-height: 70px;
+              float: left;
+              text-align: center;
+              font-size: 36px;
+            }
+            .text{
+              width: 80%;
+              float: right;
+              height: 70px;
+              line-height: 20px;
+              .time{
+                font-size: 12px;
+                margin-bottom: 8px;
+              }
+            }
           }
           &.notification-unread{
             .notification-actions{
@@ -215,7 +235,6 @@ html, body{
             }
             .notification-body{
               border-color: $branding;
-              border-width: 2px;
               color: $branding;
               font-weight: 500;
             }
@@ -246,7 +265,7 @@ html, body{
     &.large-pane{
       width: 100%;
       .pane-inner{
-        padding: 44px 15px 49px 15px;
+        padding: 44px 0px 49px 0px;
         .group{
           border: 1px solid $lineGray;
           border-radius: 5px;
