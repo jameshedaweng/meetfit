@@ -15,6 +15,7 @@ MF.tabSwitch = function(){
         $('.main-container').html(data);
         $('.main-container').fadeIn(100);
         MF.menuInit();
+        MF.pillInit();
       });
     });
   });
@@ -70,9 +71,34 @@ MF.menuSwitch = function(){
   });
 };
 
+MF.pillInit = function(){
+  if($(".pill-switch").length){
+    $("." + $(this).parent().data("bind")).hide();
+    $("." + $(".pill-switch > .selected").data("bind")).show();
+  }
+};
+
+MF.pillSwitch = function(){
+  $(".main-container").on("click", ".pill-item", function(){
+    $(".pill-item.selected").removeClass("selected");
+    $(this).addClass("selected");
+    $("." + $(this).parent().data("bind")).hide();
+    $("." + $(".pill-switch > .selected").data("bind")).show();
+  });
+};
+
+MF.readNotification = function(){
+  $(".main-container").on("click", ".notification-item", function(){
+    $(this).toggleClass("notification-unread");
+    MF.pillInit();
+  });
+};
+
 $(document).ready(function(){
   MF.tabInit();
   MF.tabSwitch();
   MF.accessibilitySwitch();
   MF.menuSwitch();
+  MF.pillSwitch();
+  MF.readNotification();
 });

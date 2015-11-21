@@ -48,6 +48,30 @@ html, body{
     overflow-y: auto;
     .pane-inner{
       padding-top: 44px;
+      padding-bottom: 49px;
+      .pill-switch{
+        width: 300px;
+        height: 30px;
+        margin: 30px auto;
+        border: 2px solid $branding;
+        border-radius: 5px;
+        overflow: hidden;
+        font-size: 0;
+        .item{
+          display: inline-block;
+          font-size: 14px;
+          height: 28px;
+          line-height: 28px;
+          text-align: center;
+          width: 148px;
+          color: $branding;
+          @include transition-quick();
+          &.selected{
+            color: $textWhite;
+            background-color: $branding;
+          }
+        }
+      }
       .group{
         margin-top: 30px;
         background-color: $bgWhite;
@@ -94,6 +118,24 @@ html, body{
             .title{
               border-color: $branding;
             }
+          }
+        }
+      }
+      .notifications-container{
+        max-width: 768px;
+        margin: 0 auto;
+        .notification-item{
+          width: 100%;
+          border: 1px solid $lineGray;
+          border-radius: 5px;
+          background-color: $bgWhite;
+          padding: 15px;
+          margin-bottom: 15px;
+          &.notification-unread{
+            border-color: $branding;
+            border-width: 2px;
+            color: $branding;
+            font-weight: 500;
           }
         }
       }
