@@ -98,6 +98,96 @@ html, body{
           }
         }
       }
+      .event-list-container{
+        max-width: 768px;
+        margin: 0 auto;
+        &.recommand-list-container{
+          margin-top: 30px;
+        }
+        .event-list-item{
+          margin-bottom: 15px;
+          position: relative;
+          height: 250px;
+          .event-item-actions{
+            position: absolute;
+            width: 568px;
+            top: 0; 
+            left: 100px;
+            z-index: 10;
+            .swipe-action{
+              width: 120px;
+              height: 250px;
+              display: inline-block;
+              text-align: center;
+              color: $textWhite;
+              i{
+                font-size: 30px;
+                line-height: 50px;
+              }
+              .text{
+                line-height: 20px;
+              }
+              &.details{
+                border-radius: 5px 0px 0px 5px;
+                float: left;
+                background-color: $actionBlue;
+                padding: 90px 35px 90px 15px;
+              }
+              &.not-interested{
+                border-radius: 0px 5px 5px 0px;
+                float: right;
+                background-color: $actionRed;
+                padding: 90px 15px 90px 35px;
+              }
+            }
+          }
+          .event-item-body{
+            position: absolute;
+            width: 568px;
+            top: 0;
+            left: 100px;
+            height: 250px;
+            border: 2px solid $textMiddleGray;
+            color: $textMiddleGray;
+            border-radius: 5px;
+            background-color: $bgWhite;
+            padding: 0px;
+            z-index: 15;
+            overflow: hidden;
+            @include transition-quick();
+            line-height: 0px;
+            .image-container{
+              display: inline-block;
+              float: left;
+              width: 150px;
+              height: 250px;
+              overflow: hidden;
+              img{
+                width: 150px;
+                height: auto;
+              }
+            }
+            .content-container{
+              margin-left: 150px;
+              height: 250px;
+              padding: 15px 25px;
+              .text{
+                display: block;
+                &.title{
+                  color: $branding;
+                  font-size: 24px;
+                  line-height: 40px;
+                  margin-bottom: 20px;
+                }
+                &.date, &.cost, &.extra-info, &.people{
+                  font-size: 14px;
+                  line-height: 25px;
+                }
+              }
+            }
+          }
+        }
+      }
       .group{
         margin-top: 30px;
         background-color: $bgWhite;

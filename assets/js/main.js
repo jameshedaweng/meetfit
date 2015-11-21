@@ -6,6 +6,8 @@ MF.tabInit = function(){
     MF.menuInit();
     MF.pillInit();
     MF.mapInit();
+    MF.getEvents();
+    MF.getRecommandations();
   });
 };
 
@@ -19,6 +21,8 @@ MF.tabSwitch = function(){
         $('.main-container').fadeIn(100);
         MF.menuInit();
         MF.pillInit();
+        MF.getEvents();
+        MF.getRecommandations();
         setTimeout(function(){MF.mapInit()}, 400);
       });
     });
@@ -134,6 +138,87 @@ MF.swipeNotification = function(){
   });
 };
 
+MF.getEvents = function(){
+  if($(".my-event-list").length){
+    $.get("/data/events.json", function(data){
+      var eventItems = "";
+      var eventItemStart = '<div class="event-list-item"><div class="event-item-actions"><div class="swipe-action details"><i class="bi_editorial-left-align"></i><div class="text">Details</div></div><div class="swipe-action not-interested"><i class="bi_interface-box-cross"></i><div class="text">Not Going</div></div></div><div class="event-item-body">';
+      var eventItemEnd = '</div></div>';
+      $.each(data, function(index, value){
+        eventItems += eventItemStart;
+        eventItems += '<div class="image-container"><img src="http://lorempixel.com/200/400/sports/';
+        eventItems += index + 1;
+        eventItems += '"></div>';
+        eventItems += '<div class="content-container"><div class="text title">';
+        eventItems += value.name_event;
+        eventItems += '</div><div class="text date">Date: ';
+        eventItems += value.date;
+        eventItems += '</div><div class="text cost">Cost: ';
+        eventItems += value.costs;
+        eventItems += ' €</div><div class="text extra-info">';
+        eventItems += value.extra_info;
+        eventItems += '</div><div class="text people">';
+        eventItems += value.number_people_needed;
+        eventItems += ' Places available</div></div>';
+        eventItems += eventItemEnd;
+      });
+      $(".my-event-list").html(eventItems);
+    });
+  }
+};
+
+MF.getRecommandations = function(){
+  if($(".recommand-list-container").length){
+    $.get("/data/events.json", function(data){
+      var eventItems = "";
+      var eventItemStart = '<div class="event-list-item"><div class="event-item-actions"><div class="swipe-action details"><i class="bi_editorial-left-align"></i><div class="text">Details</div></div><div class="swipe-action not-interested"><i class="bi_interface-box-cross"></i><div class="text">Not Interested</div></div></div><div class="event-item-body">';
+      var eventItemEnd = '</div></div>';
+      $.each(data, function(index, value){
+        eventItems += eventItemStart;
+        eventItems += '<div class="image-container"><img src="http://lorempixel.com/200/400/sports/';
+        eventItems += index + 3;
+        eventItems += '"></div>';
+        eventItems += '<div class="content-container"><div class="text title">';
+        eventItems += value.name_event;
+        eventItems += '</div><div class="text date">Date: ';
+        eventItems += value.date;
+        eventItems += '</div><div class="text cost">Cost: ';
+        eventItems += value.costs;
+        eventItems += ' €</div><div class="text extra-info">';
+        eventItems += value.extra_info;
+        eventItems += '</div><div class="text people">';
+        eventItems += value.number_people_needed;
+        eventItems += ' Places available</div></div>';
+        eventItems += eventItemEnd;
+      });
+      $(".recommand-list-container").html(eventItems);
+    });
+  }
+};
+
+MF.swipeEvents = function(){
+  $(".main-container").on("swipeleft", ".event-item-body", function(){
+    if(!$(this).hasClass("right-expanded")){
+      $(this).css("left", "0px");
+      $(this).addClass("left-expanded");
+    }
+    else{
+      $(this).css("left", "100px");
+      $(this).removeClass("right-expanded");
+    }
+  });
+  $(".main-container").on("swiperight", ".event-item-body", function(){
+    if(!$(this).hasClass("left-expanded")){
+      $(this).css("left", "200px");
+      $(this).addClass("right-expanded");
+    }
+    else{
+      $(this).css("left", "100px");
+      $(this).removeClass("left-expanded");
+    }
+  });
+};
+
 MF.mapInit = function(){
   if($("#map").length){
     mapboxgl.accessToken = 'pk.eyJ1IjoiamFtZXNoZWRhd2VuZyIsImEiOiJxNGxvT1h3In0.q1gGwhVt7lQ7Tji5NV2jUQ';
@@ -162,4 +247,5 @@ $(document).ready(function(){
   MF.readNotification();
   MF.deleteNotification();
   MF.swipeNotification();
+  MF.swipeEvents();
 });
