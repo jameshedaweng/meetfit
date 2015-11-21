@@ -3,6 +3,9 @@ var MF = [];
 MF.tabInit = function(){
   $.get("/templates/" + $(".tab-bar-bottom-inner > .selected").data("template") + "/index.html", function(data){
     $(".main-container").html(data);
+    MF.menuInit();
+    MF.pillInit();
+    MF.mapInit();
   });
 };
 
@@ -16,6 +19,7 @@ MF.tabSwitch = function(){
         $('.main-container').fadeIn(100);
         MF.menuInit();
         MF.pillInit();
+        setTimeout(function(){MF.mapInit()}, 400);
       });
     });
   });
@@ -73,7 +77,7 @@ MF.menuSwitch = function(){
 
 MF.pillInit = function(){
   if($(".pill-switch").length){
-    $("." + $(this).parent().data("bind")).hide();
+    $("." + $(".pill-switch").data("bind")).hide();
     $("." + $(".pill-switch > .selected").data("bind")).show();
     $(".notification-body").css("left", "100px");
     $(".notification-body").removeClass("left-expanded");
@@ -128,6 +132,19 @@ MF.swipeNotification = function(){
       $(this).removeClass("left-expanded");
     }
   });
+};
+
+MF.mapInit = function(){
+  if($("#map").length){
+    mapboxgl.accessToken = 'pk.eyJ1IjoiamFtZXNoZWRhd2VuZyIsImEiOiJxNGxvT1h3In0.q1gGwhVt7lQ7Tji5NV2jUQ';
+    MF.map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/jameshedaweng/cih8z9cgn001wbwm5otha9g35', 
+      center: [-3.790124, 43.476921],
+      zoom: 13
+    });
+    MF.map.addControl(new mapboxgl.Navigation());
+  }
 };
 
 $(window).load(function(){
