@@ -8,8 +8,8 @@
             "tag": null,
             "date": "21/11/201512: 00: 00",
             "location": [
+				"-3.790124",
                 "43.476921",
-                "-3.790124",
                 "Santander"
             ],
             "image": [
@@ -29,9 +29,9 @@
             "tag": null,
             "date": "21/11/201511: 00: 00",
             "location": [
+				"-3.790124",
                 "43.476921",
-                "-3.790124",
-                "Santander"
+                 "Santander"
             ],
             "image": [
                 "jpg",
@@ -66,8 +66,8 @@
             "role": "normal",
             "email": "hedawong@hacktoprogress.com",
             "location": [
-                "43.476921",
                 "-3.790124",
+				"43.476921",
                 "Santander"
             ]
         }
