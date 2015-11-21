@@ -27,6 +27,25 @@ html, body{
   }
 }
 
+.splash{
+  background-color: $bgWhite;
+  z-index: 12000;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  img{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: 50vh;
+    left: 50vw;
+    margin-top: -300px;
+    margin-left: -300px;
+  }
+}
+
 .switch-toggle{
   @include switch-toggle($branding);
 }

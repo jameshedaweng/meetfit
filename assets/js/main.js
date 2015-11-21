@@ -94,6 +94,12 @@ MF.readNotification = function(){
   });
 };
 
+$(window).load(function(){
+  setTimeout(function(){
+    $(".splash").fadeOut(800);
+  }, 1200);
+});
+
 $(document).ready(function(){
   MF.tabInit();
   MF.tabSwitch();
